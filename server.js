@@ -14,11 +14,8 @@ const corsOptions = {
     optionsSuccessStatus: 200
 };
 
-// Apply CORS before all routes
+// Apply CORS before all routes (handles preflight automatically)
 app.use(cors(corsOptions));
-
-// Handle preflight requests explicitly for all routes
-app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
